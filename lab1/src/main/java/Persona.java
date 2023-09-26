@@ -8,7 +8,7 @@ import java.util.Date;
 
 /**
  *
- * @author c6890730
+ * @author mariona farre
  */
 public final class Persona {
     private long id;
