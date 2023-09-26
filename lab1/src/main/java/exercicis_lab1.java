@@ -32,6 +32,7 @@ public class exercicis_lab1 {
         //llegir un sencer,N per teclat 
         //llegir N paraules sense repeticions- si repeticions missatge error i 
         //ignorar paraula
+        
         int N;
         Scanner intscanner=new Scanner(System.in);
         System.out.println("Entra numero de paraules>> ");
@@ -65,7 +66,7 @@ public class exercicis_lab1 {
                 paraules[w]=paraula; 
                 ++w;
             }else{
-               System.out.println("Paraula repetida,entra una altre paraula: ");               
+               System.out.println("Paraula repetida, entra una altre paraula: ");               
             } 
         }
 
@@ -85,10 +86,10 @@ public class exercicis_lab1 {
             System.out.println(">> "+paraules[i]+" Encastat amb: ");
             
             String[] encastades= new String[paraules.length];
-           
+
             encastades=encastat(paraules,paraules[i]);
-            
-            for(int j=0;j<encastades.length;++j){
+
+            for(int j=0;j<encastades.length;++j){ 
                 if(encastades[j]!=null)System.out.println(encastades[j]);
             }
         }
@@ -107,15 +108,36 @@ public class exercicis_lab1 {
     }
     
     public static String[] encastat(String[] p, String paraula){
-        //tenir sufix(final) de paraula i prefix(inici) de les paraules
-        String[] resultat=new String[p.length];
-        int r=0;
-        for (int i=0;i<p.length;++i){
-            //si sufix (final)de paraula= prefix(starts) p[i] == encastar
-          
-        }
+        //tenir sufix(final) de paraula i prefix(inici) de les paraules      
+        List<String> resultat=new ArrayList<>();
         
-        return resultat;
+        for(String word:p){
+            //recorre tot el array de paraules - mirar condicio - si si guardar
+            //paraula encastads
+            //si sufix (final)de paraula= prefix(starts) p[i] == encastar
+            System.out.println("Encastar paraules" +paraula+":"+word);
+            
+            int n=paraula.length(); //utlima lletra
+            int t=word.length();
+            
+            int midamitjana=Math.min(n,t);
+            int r=0; //lletres q coincideixen 
+            
+          //  System.out.println(+paraula.charAt(n)+":"+word.charAt(t));
+
+            while(r<midamitjana && paraula.charAt(n-midamitjana-1)==word.charAt(midamitjana)){
+                midamitjana++;
+            }
+            
+            if(midamitjana>0){
+                String encastada=paraula+word.substring(midamitjana);
+                 resultat.add(encastada);
+                
+                System.out.println("Encastada "+encastada);
+            }
+                    
+        }
+        return resultat.toArray(new String[0]);
     }
 
     
