@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-        
+package robot1;
+
+
 import java.awt.Graphics2D;
 import robocode.AdvancedRobot;
 import robocode.Robot;
@@ -15,7 +13,7 @@ import robocode.TeamRobot;
  *
  * @author usuario
  */
-public class MyRobot1 extends AdvancedRobot {
+public class MyRobot1 extends TeamRobot {
 
     @Override
 
@@ -31,7 +29,7 @@ public class MyRobot1 extends AdvancedRobot {
             execute();
             
             System.out.println(getHeading()); //mirar en terminal de batalla
-            SystemDebbuggin()
+            //SystemDebbugging();
 
         }
     }
